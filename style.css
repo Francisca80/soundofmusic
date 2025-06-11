@@ -7,3 +7,16 @@ Version: 1.0
 */
 
 @import url('../twentytwentyfive/style.css');
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeInLeft 1s ease-out 0.2s forwards;
+  }
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+

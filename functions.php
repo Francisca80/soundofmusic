@@ -12,3 +12,9 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('child-style', get_stylesheet_uri(), ['parent-style', 'child-google-fonts']);
 });
+
+        add_action('init', function () {
+    register_block_pattern_category('custom', [
+        'label' => __('Custom', 'soundofmusic')
+    ]);
+});
