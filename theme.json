@@ -46,9 +46,24 @@
           "name": "Text Secondary"
         },
         {
+          "slug": "gray-background",
+          "color": "#FCF9FA",
+          "name": "Gray Background"
+        },
+        {
           "slug": "muted",
           "color": "#999999",
           "name": "Muted"
+        },
+        {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
+        },
+        {
+          "slug": "white",
+          "color": "#FFFFFF",
+          "name": "White"
         }
       ]
     },
