@@ -1,0 +1,37 @@
+<!-- wp:group {"tagName":"section","align":"wide","className":"ssom-blog-section","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}}} -->
+<section class="wp-block-group alignwide ssom-blog-section" style="padding-top:4rem;padding-bottom:4rem;">
+
+    <!-- wp:heading {"textAlign":"center","level":2} -->
+    <h2 class="has-text-align-center">Latest Blog & Articles</h2>
+    <!-- /wp:heading -->
+
+    <!-- wp:paragraph {"align":"center"} -->
+    <p class="has-text-align-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+    <!-- /wp:paragraph -->
+
+    <!-- wp:spacer {"height":"2rem"} -->
+    <div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+    <!-- /wp:spacer -->
+
+    <!-- wp:query {"queryId":4,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"grid","columns":3}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+
+        <!-- wp:group {"tagName":"article","className":"ssom-blog-card","layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+        <article class="wp-block-group ssom-blog-card">
+            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"12px"}}} /-->
+
+            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem"}}},"layout":{"type":"default"}} -->
+            <div class="wp-block-group" style="padding-top:1rem">
+                <!-- wp:post-title {"isLink":true,"className":"blog-title"} /-->
+                <!-- wp:post-excerpt {"moreText":"Read More","excerptLength":15,"className":"blog-excerpt"} /-->
+            </div>
+            <!-- /wp:group -->
+        </article>
+        <!-- /wp:group -->
+
+        <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+</section>
+<!-- /wp:group --> 

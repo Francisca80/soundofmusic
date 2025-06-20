@@ -7,8 +7,8 @@ window.addEventListener('load', function() {
         return;
     }
 
-    // Target the intro title
-    const introTitle = document.querySelector('.intro-title');
+    // Target the intro title - updated selector to match actual HTML
+    const introTitle = document.querySelector('#intro-ssom-section .has-x-large-font-size');
     console.log('Intro title found:', introTitle);
     
     if (!introTitle) {
@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
             width: 100%;
             height: 2px;
             background-color: #000;
-            opacity: 0.3;
+            opacity: 0.1;
             top: ${i * 15 + 10}px;
         `;
         staffContainer.appendChild(line);
