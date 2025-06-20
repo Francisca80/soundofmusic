@@ -21,7 +21,6 @@ add_action('wp_enqueue_scripts', function () {
 
     // Enqueue animations
     wp_enqueue_script('hero-animate', get_stylesheet_directory_uri() . '/js/hero-animate.js', array('gsap', 'gsap-scrolltrigger'), wp_get_theme()->get('Version'), true);
-    wp_enqueue_script('music-notes', get_stylesheet_directory_uri() . '/js/music-notes.js', array('gsap'), wp_get_theme()->get('Version'), true);
     wp_enqueue_script('bento-ssom', get_stylesheet_directory_uri() . '/js/bento-ssom.js', array('gsap', 'gsap-scrolltrigger'), wp_get_theme()->get('Version'), true);
 
     // Enqueue Swiper for testimonial slider
