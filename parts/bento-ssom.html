@@ -1,38 +1,54 @@
-<!-- wp:group {"align":"full","style":{"color":{"background":"var(--wp--preset--color--background)"},"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}}} -->
-<div class="wp-block-group alignfull has-background bento-ssom" style="background-color:var(--wp--preset--color--background);padding-top:4rem;padding-bottom:4rem"><!-- wp:group {"align":"wide","style":{"border":{"radius":"16px"},"spacing":{"padding":{"left":"2rem","right":"2rem"}}},"layout":{"type":"constrained","contentSize":"1400px"}} -->
-  <div class="wp-block-group alignwide" style="border-radius:16px;padding-left:2rem;padding-right:2rem"><!-- wp:columns {"className":"bento-row","style":{"spacing":{"blockGap":{"top":"1rem","left":"2rem"}},"margin":{"top":"2rem"},"border":{"radius":"16px"}}} -->
-  <div class="wp-block-columns bento-row" style="border-radius:16px"><!-- wp:column {"style":{"border":{"radius":"16px"}}} -->
-  <div class="wp-block-column bento-item" style="border-radius:16px"><!-- wp:image {"id":114,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-  <figure class="wp-block-image size-large has-custom-border"><img src="http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-8-1024x683.jpg" alt="" class="wp-image-114" style="border-radius:8px"/></figure>
+<!-- wp:group {"align":"full","className":"bento-ssom","style":{"color":{"background":"var(--wp--preset--color--background)"}}} -->
+<div class="wp-block-group alignfull has-background bento-ssom" style="background-color:var(--wp--preset--color--background)"><!-- wp:group {"align":"wide","className":"bento-container"} -->
+  <div class="wp-block-group alignwide bento-container"><!-- wp:columns {"className":"bento-row"} -->
+  <div class="wp-block-columns bento-row"><!-- wp:column {"className":"bento-item"} -->
+  <div class="wp-block-column bento-item"><!-- wp:image {"id":114,"sizeSlug":"large","linkDestination":"none","className":"bento-image"} -->
+  <figure class="wp-block-image size-large bento-image"><img src="http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-8-1024x683.jpg" alt="" class="wp-image-114"/></figure>
   <!-- /wp:image --></div>
   <!-- /wp:column -->
   
-  <!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"border":{"radius":"8px"}},"backgroundColor":"secondary"} -->
-  <div class="wp-block-column has-secondary-background-color has-background bento-item" style="border-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"style":{"typography":{"fontWeight":"700"}}} -->
-  <h2 class="wp-block-heading" style="font-weight:700">tekst</h2>
+  <!-- wp:column {"className":"bento-item bento-text-block","backgroundColor":"secondary"} -->
+  <div class="wp-block-column has-secondary-background-color has-background bento-item bento-text-block"><!-- wp:heading {"style":{"typography":{"fontWeight":"700"}}} -->
+  <h3 class="wp-block-heading" style="font-weight:700">Gitaarles voor iedereen,alle leeftijden, alle niveaus</h3>
   <!-- /wp:heading -->
   
   <!-- wp:paragraph -->
-  <p>tekst</p>
-  <!-- /wp:paragraph --></div>
+  <p>Bij Studio Sound of Music maakt het niet uit of je 6 bent of 80, net begint of al jaren speelt. Onze lessen zijn er voor iedereen die plezier heeft in muziek en beter wil leren spelen. We stemmen de les helemaal af op jouw niveau en tempo, persoonlijk, motiverend en altijd in een relaxte sfeer.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+  <div class="wp-block-buttons">
+    <!-- wp:button {"backgroundColor":"black","textColor":"white"} -->
+    <div class="wp-block-button"><a class="wp-block-button__link has-white-color has-black-background-color has-text-color has-background wp-element-button" href="/lessen">BEKIJK LESSEN</a></div>
+    <!-- /wp:button -->
+  </div>
+  <!-- /wp:buttons --></div>
   <!-- /wp:column --></div>
   <!-- /wp:columns -->
   
-  <!-- wp:columns {"className":"bento-row","style":{"spacing":{"blockGap":"2rem"}}} -->
-  <div class="wp-block-columns bento-row"><!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"8px"}},"backgroundColor":"black"} -->
-  <div class="wp-block-column has-black-background-color has-background bento-item bento-black-block" style="border-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+  <!-- wp:columns {"className":"bento-row"} -->
+  <div class="wp-block-columns bento-row"><!-- wp:column {"className":"bento-item bento-text-block bento-black-block","backgroundColor":"black"} -->
+  <div class="wp-block-column has-black-background-color has-background bento-item bento-text-block bento-black-block">
   <!-- wp:heading {"textColor":"white","style":{"typography":{"fontWeight":"700"}}} -->
-  <h2 class="wp-block-heading has-white-color has-text-color bento-white-text" style="font-weight:700">tekst</h2>
+  <h3 class="wp-block-heading has-white-color has-text-color bento-white-text" style="font-weight:700">Stadspas? Geen probleem!</h3>
   <!-- /wp:heading -->
   
   <!-- wp:paragraph {"textColor":"white"} -->
-  <p class="has-white-color has-text-color bento-white-text">tekst</p>
-  <!-- /wp:paragraph --></div>
+  <p class="has-white-color has-text-color">Heb je een Stadspas? Dan kun je gewoon bij ons terecht. Wij accepteren de Stadspas, zodat gitaarles ook toegankelijk blijft voor mensen met een kleiner budget. Iedereen verdient de kans om muziek te maken.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+  <div class="wp-block-buttons">
+    <!-- wp:button {"backgroundColor":"secondary","textColor":"primary","className":"contact-button"} -->
+    <div class="wp-block-button contact-button"><a class="wp-block-button__link has-primary-color has-secondary-background-color has-text-color has-background wp-element-button" href="#contact">NEEM CONTACT OP</a></div>
+    <!-- /wp:button -->
+  </div>
+  <!-- /wp:buttons --></div>
   <!-- /wp:column -->
   
-  <!-- wp:column -->
-  <div class="wp-block-column bento-item"><!-- wp:image {"id":163,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-  <figure class="wp-block-image size-full has-custom-border"><img src="http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-9googleresize-Copy.jpg" alt="" class="wp-image-163" style="border-radius:8px"/></figure>
+  <!-- wp:column {"className":"bento-item"} -->
+  <div class="wp-block-column bento-item"><!-- wp:image {"id":163,"sizeSlug":"full","linkDestination":"none","className":"bento-image"} -->
+  <figure class="wp-block-image size-full bento-image"><img src="http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-9googleresize-Copy.jpg" alt="" class="wp-image-163"/></figure>
   <!-- /wp:image --></div>
   <!-- /wp:column --></div>
   <!-- /wp:columns --></div>

@@ -1,11 +1,11 @@
-<!-- wp:group {"className":"testimonial-section","align":"wide","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}}} -->
-<div class="wp-block-group testimonial-section alignwide" style="padding-top:4rem;padding-bottom:4rem">
-  <!-- wp:heading {"level":2,"align":"center","style":{"typography":{"fontSize":"2.5rem","fontWeight":"700"}}} -->
-  <h2 class="has-text-align-center" style="font-size:2.5rem;font-weight:700">What Our Students & Parents Say</h2>
+<!-- wp:group {"className":"testimonial-section","align":"wide"} -->
+<div class="wp-block-group testimonial-section alignwide">
+  <!-- wp:heading {"level":2,"align":"center","className":"testimonial-heading"} -->
+  <h2 class="has-text-align-center testimonial-heading">Wat onze Studenten & Ouders zeggen</h2>
   <!-- /wp:heading -->
   
-  <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.1rem"}}} -->
-  <p class="has-text-align-center" style="font-size:1.1rem">Discover why families choose Studio Sound of Music for their musical journey</p>
+  <!-- wp:paragraph {"align":"center","className":"testimonial-subtitle"} -->
+  <p class="has-text-align-center testimonial-subtitle">Ontdek waarom anderen Studio Sound of Music hebben gekozen voor hun muzikale reis</p>
   <!-- /wp:paragraph -->
   
   <!-- wp:spacer {"height":"2rem"} -->
@@ -22,7 +22,10 @@
         </div>
         <div class="testimonial-content">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"Studio Sound of Music has transformed my daughter's passion for guitar into real skill. The teachers are patient, encouraging, and truly care about each student's progress. Highly recommended!"</p>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">"Studio Sound of Music has transformed my daughter's passion for guitar into real skill. The teachers are patient, encouraging, and truly care about each student's progress. Highly recommended!"</p>
+            <button class="testimonial-expand-btn" onclick="toggleTestimonial(this)">Lees meer</button>
+          </div>
           <div class="testimonial-meta">
             <span class="testimonial-name">Emma Johnson</span>
             <span class="testimonial-title">Parent of Guitar Student</span>
@@ -33,14 +36,17 @@
       <!-- Slide 2 -->
       <div class="swiper-slide testimonial-card">
         <div class="testimonial-avatar">
-          <img src="http://studio-sound-of-music.local/wp-content/uploads/2025/06/kevin-150x150.jpeg" alt="Lucas Chen" />
+          <img src="http://studio-sound-of-music.local/wp-content/uploads/2025/06/kevin-150x150.jpeg" alt="Kelvin" />
         </div>
         <div class="testimonial-content">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"I've been taking piano lessons here for 2 years and the progress I've made is incredible. The instructors are professional, the atmosphere is welcoming, and I always look forward to my lessons."</p>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">"Ik ben razend enthousiast over Marlowe. Ik wilde graag met meer gevoel gitaar kunnen spelen. Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse hobby geworden en heb ik heel veel zin om in de toekomst mijn musicaliteit verder te ontdekken. Hij luistert goed, is geïnteresseerd en ik mag bij hem mijn fouten maken. Ook buiten de les om staat hij altijd klaar om me te helpen met een video of om tips te geven. Ik ben voor m'n gevoel echt een gitarist geworden!"</p>
+            <button class="testimonial-expand-btn" onclick="toggleTestimonial(this)">Lees meer</button>
+          </div>
           <div class="testimonial-meta">
-            <span class="testimonial-name">Lucas Chen</span>
-            <span class="testimonial-title">Piano Student</span>
+            <span class="testimonial-name">Kelvin</span>
+            <span class="testimonial-title">Gitaar Student</span>
           </div>
         </div>
       </div>
@@ -52,10 +58,13 @@
         </div>
         <div class="testimonial-content">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"As a parent, I appreciate how Studio Sound of Music makes learning music fun and accessible. My son has developed confidence and a love for music that will last a lifetime."</p>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">"Gitaarles volgen bij Marlowe is een combinatie van muziektheorie, gitaartechniek en je lievelingsnummers leren spelen. Marlowe legt helder uit hoe je een nummer moet spelen en wat de achterliggende gedachte/theorie is. Ook let hij op je houding zodat je relaxed gitaar speelt en geeft je tips zodat je effectief kan oefenen. Je merkt direct dat je erop vooruit gaat."</p>
+            <button class="testimonial-expand-btn" onclick="toggleTestimonial(this)">Lees meer</button>
+          </div>
           <div class="testimonial-meta">
             <span class="testimonial-name">Sarah Williams</span>
-            <span class="testimonial-title">Parent of Drums Student</span>
+            <span class="testimonial-title">Gitaar Student</span>
           </div>
         </div>
       </div>
@@ -63,18 +72,24 @@
       <!-- Slide 4 -->
       <div class="swiper-slide testimonial-card">
         <div class="testimonial-avatar">
-          <img src="http://studio-sound-of-music.local/wp-content/uploads/2025/06/kevin-150x150.jpeg" alt="Michael Rodriguez" />
+          <img src="http://studio-sound-of-music.local/wp-content/uploads/2025/06/kevin-150x150.jpeg" alt="Ronald Sikkens" />
         </div>
         <div class="testimonial-content">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"The quality of instruction at Studio Sound of Music is outstanding. I've learned more in 6 months here than I did in 2 years with other teachers. The personalized approach really makes a difference."</p>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">"Marlowe is een rustige leraar die mij als beginnend gitarist goed op weg heeft geholpen. Veel aandacht voor techniek en hoe je dit moet toepassen binnen je eigen mogelijkheden. Ook als gevorderd gitarist kun je nog veel leren van hem."</p>
+            <button class="testimonial-expand-btn" onclick="toggleTestimonial(this)">Lees meer</button>
+          </div>
           <div class="testimonial-meta">
-            <span class="testimonial-name">Michael Rodriguez</span>
-            <span class="testimonial-title">Bass Guitar Student</span>
+            <span class="testimonial-name">Ronald Sikkens</span>
+            <span class="testimonial-title">Gitaar Student</span>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Pagination dots -->
+    <div class="swiper-pagination"></div>
   </div>
   <!-- /wp:html -->
 </div>
