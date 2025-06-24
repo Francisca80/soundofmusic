@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   let testimonialSwiper = null;
+  let previousIndex = 0;
   
   function initTestimonialSlider() {
     // Destroy existing swiper if it exists
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Swiper !== 'undefined') {
       testimonialSwiper = new Swiper('.testimonial-slider', {
         loop: true,
+        loopedSlides: 4,
         slidesPerView: 1,
         spaceBetween: 20,
         autoplay: {
@@ -27,114 +29,104 @@ document.addEventListener('DOMContentLoaded', function () {
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-          dynamicBullets: true,
         },
         breakpoints: {
           576: {
             slidesPerView: 1,
             spaceBetween: 20,
-            centeredSlides: false,
           },
           768: {
             slidesPerView: 2,
             spaceBetween: 30,
-            centeredSlides: false,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 40,
-            centeredSlides: false,
           },
-          1200: {
-            slidesPerView: 2,
-            spaceBetween: 50,
-            centeredSlides: false,
-          }
         },
         on: {
           init: function() {
+            previousIndex = this.realIndex;
             checkTextTruncation();
           },
-          resize: function() {
-            checkTextTruncation();
-          },
-          slideChange: function() {
-            // Reset all expanded texts when slide changes
-            const allTexts = document.querySelectorAll('.testimonial-text.expanded');
-            const allButtons = document.querySelectorAll('.testimonial-expand-btn');
-            
-            allTexts.forEach(text => {
-              text.classList.remove('expanded');
-            });
-            
-            allButtons.forEach(btn => {
-              btn.textContent = 'Lees meer';
-            });
-            
-            // Check truncation for new slide
-            setTimeout(checkTextTruncation, 100);
+          slideChangeTransitionEnd: function() {
+            // Only reset when actually looping from last to first
+            if (this.realIndex === 0 && previousIndex === 3) {
+              resetExpandedTexts();
+            }
+            previousIndex = this.realIndex;
           }
         }
       });
     }
   }
   
-  // Check if text is truncated and show/hide expand button accordingly
-  function checkTextTruncation() {
-    const testimonialTexts = document.querySelectorAll('.testimonial-text');
+  // Initialize slider
+  initTestimonialSlider();
+  
+  // Reinitialize on window resize
+  window.addEventListener('resize', function() {
+    setTimeout(initTestimonialSlider, 100);
+  });
+  
+  // Reset expanded texts smoothly
+  function resetExpandedTexts() {
+    const texts = document.querySelectorAll('.testimonial-text');
+    const buttons = document.querySelectorAll('.testimonial-expand-btn');
     
-    testimonialTexts.forEach(textElement => {
-      const expandBtn = textElement.parentElement.querySelector('.testimonial-expand-btn');
-      if (expandBtn) {
-        // Reset line clamp to check actual height
-        textElement.style.webkitLineClamp = '4';
-        textElement.style.lineClamp = '4';
+    texts.forEach(text => {
+      text.classList.remove('expanded');
+      text.style.webkitLineClamp = '4';
+      text.style.lineClamp = '4';
+    });
+    
+    buttons.forEach(btn => {
+      btn.textContent = 'Lees meer';
+      btn.style.display = 'none';
+    });
+    
+    // Check truncation after a brief delay
+    requestAnimationFrame(() => {
+      checkTextTruncation();
+    });
+  }
+  
+  // Check if text is truncated
+  function checkTextTruncation() {
+    const texts = document.querySelectorAll('.testimonial-text');
+    
+    texts.forEach(text => {
+      const container = text.parentElement;
+      const btn = container.querySelector('.testimonial-expand-btn');
+      
+      if (btn && !text.classList.contains('expanded')) {
+        // Reset to check height
+        text.style.webkitLineClamp = '4';
+        text.offsetHeight;
         
-        // Force reflow
-        textElement.offsetHeight;
+        // Check if truncated
+        const isTruncated = text.scrollHeight > text.clientHeight;
         
-        // Check if text is actually truncated
-        const isTruncated = textElement.scrollHeight > textElement.clientHeight;
-        expandBtn.style.display = isTruncated ? 'inline-block' : 'none';
+        // Show/hide button
+        btn.style.display = isTruncated ? 'inline-block' : 'none';
       }
     });
   }
   
-  // Initialize slider on page load
-  initTestimonialSlider();
-  
-  // Reinitialize on window resize with debounce
-  let resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      initTestimonialSlider();
-    }, 250);
-  });
-  
-  // Reinitialize on orientation change
-  window.addEventListener('orientationchange', function() {
-    setTimeout(function() {
-      initTestimonialSlider();
-    }, 500);
-  });
-});
-
-// Function to toggle testimonial text expansion
-function toggleTestimonial(button) {
-  const textContainer = button.parentElement;
-  const text = textContainer.querySelector('.testimonial-text');
-  const isExpanded = text.classList.contains('expanded');
-  
-  if (isExpanded) {
-    text.classList.remove('expanded');
-    text.style.webkitLineClamp = '4';
-    text.style.lineClamp = '4';
-    button.textContent = 'Lees meer';
-  } else {
+  // Function to expand text
+  function toggleTestimonial(button) {
+    const container = button.parentElement;
+    const text = container.querySelector('.testimonial-text');
+    
+    // Expand the text
     text.classList.add('expanded');
     text.style.webkitLineClamp = 'unset';
     text.style.lineClamp = 'unset';
-    button.textContent = 'Lees minder';
+    
+    // Hide the button
+    button.style.display = 'none';
   }
-} 
+  
+  // Make function globally available
+  window.toggleTestimonial = toggleTestimonial;
+}); 
